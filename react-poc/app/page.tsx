@@ -1,11 +1,10 @@
 /** @format */
+import Home from "./components/Home/Home";
 
-import { FullForm } from "./components/fullForm";
-
-export default function Home() {
+export default function HomePage() {
   return (
     <div>
-      <FullForm />
+      <Home />
     </div>
   );
 }
