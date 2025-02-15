@@ -32,7 +32,7 @@ const Nav = ({ openNav }: Props) => {
             <GrTechnology className='w-6 h-6 text-white' />
           </div>
           <h1 className='text-xl md:text-2xl font-bold text-gray-900 hidden sm:block'>
-            Poetic
+            Everything
           </h1>
         </div>
 
