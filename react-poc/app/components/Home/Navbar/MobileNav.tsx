@@ -1,26 +1,45 @@
 /** @format */
-
 import { navLinks } from "@/constant/constant";
 import Link from "next/link";
 import React from "react";
 import { CgClose } from "react-icons/cg";
 
-const MobileNav = () => {
+type Props = {
+  showNav: boolean;
+  closeNav: () => void;
+};
+
+const MobileNav = ({ showNav, closeNav }: Props) => {
+  const isNavOpen = showNav ? "translate-x-0" : "-translate-x-full";
+
   return (
     <div>
-      {/* {overlay} */}
-      <div className='fixed inset-0 transform transition-all duration-500 z-[1002] bg-black opacity-40 w-full h-screen'></div>
-      <div className='text-white fixed justify-center flex flex-col h-full transform transition-all duration-500 delay-300 w-[80%] sm:w-[60%] bg-black space-y-6 z-[1050]'>
-        {navLinks.map((link) => {
-          return (
-            <Link key={link.id} href={link.url}>
-              <p className='text-white w-fit text-[20px] ml-12 border-b-[1.5px] pb-1 border-white sm:text-[30px]'></p>
-              {link.label}
-            </Link>
-          );
-        })}
-        {/* close icon */}
-        <CgClose className='absolute top-[0.7rem] right-[1.4rem] sm:w-8 sm:h-8 w-6 h-6' />
+      {/* Overlay */}
+      {showNav && (
+        <div
+          className='fixed inset-0 bg-black opacity-40 w-full h-screen z-[1001]'
+          onClick={closeNav}
+        />
+      )}
+
+      {/* Mobile Nav Panel */}
+      <div
+        className={`fixed top-0 left-0 h-full w-[80%] sm:w-[60%] bg-black text-white space-y-6 p-6 transform ${isNavOpen} transition-transform duration-500 z-[1050]`}>
+        {/* Navigation Links */}
+        {navLinks.map((link) => (
+          <Link
+            key={link.id}
+            href={link.url}
+            className='block text-xl sm:text-2xl border-b border-white pb-2 ml-6'>
+            {link.label}
+          </Link>
+        ))}
+
+        {/* Close Button */}
+        <CgClose
+          onClick={closeNav}
+          className='absolute top-4 right-6 w-6 h-6 sm:w-8 sm:h-8 cursor-pointer'
+        />
       </div>
     </div>
   );

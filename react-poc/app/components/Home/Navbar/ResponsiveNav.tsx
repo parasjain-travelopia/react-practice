@@ -1,14 +1,16 @@
 /** @format */
-
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import MobileNav from "./MobileNav";
 import Nav from "./Nav";
 
 const ResponsiveNav = () => {
+  const [showNav, setShowNav] = useState(false);
+
   return (
     <div>
-      <Nav />
-      <MobileNav />
+      <Nav openNav={() => setShowNav(true)} />
+      <MobileNav showNav={showNav} closeNav={() => setShowNav(false)} />
     </div>
   );
 };
