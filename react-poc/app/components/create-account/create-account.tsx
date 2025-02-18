@@ -50,7 +50,7 @@ export const CreateAccount = () => {
   }, [isSubmitSuccessful, reset]);
 
   return (
-    <div className='flex flex-col items-center justify-center w-full h-full p-4'>
+    <div className='flex flex-col items-center justify-center w-[80%] h-full p-4'>
       <h1 className='text-3xl md:text-5xl lg:text-7xl text-gray-950 font-bold text-center animate-typing overflow-hidden whitespace-nowrap'>
         Let's create your account..
       </h1>
@@ -70,7 +70,7 @@ export const CreateAccount = () => {
             {...register("name")}
             className='w-full p-2 border border-gray-300 rounded-md'
           />
-          <p className='text-red-500 text-xs mt-1'>{errors.name?.message}</p>
+          <p className='text-gray-500 text-xs mt-1'>{errors.name?.message}</p>
         </div>
 
         <div className='form-control mb-4'>
@@ -84,7 +84,7 @@ export const CreateAccount = () => {
             {...register("email")}
             className='w-full p-2 border border-gray-300 rounded-md'
           />
-          <p className='text-red-500 text-xs mt-1'>{errors.email?.message}</p>
+          <p className='text-gray-500 text-xs mt-1'>{errors.email?.message}</p>
         </div>
 
         <div className='form-control mb-4'>
@@ -98,7 +98,7 @@ export const CreateAccount = () => {
             {...register("password")}
             className='w-full p-2 border border-gray-300 rounded-md'
           />
-          <p className='text-red-500 text-xs mt-1'>
+          <p className='text-gray-500 text-xs mt-1'>
             {errors.password?.message}
           </p>
         </div>
@@ -118,11 +118,11 @@ export const CreateAccount = () => {
                   <button
                     type='button'
                     onClick={() => remove(index)}
-                    className='ml-2 p-2 bg-red-500 text-white rounded-md'>
+                    className='ml-2 p-2 bg-gray-500 text-white rounded-md'>
                     Remove
                   </button>
                 )}
-                <p className='text-red-500 text-xs mt-1'>
+                <p className='text-gray-500 text-xs mt-1'>
                   {errors.phNumbers?.[index]?.number?.message}
                 </p>
               </div>
