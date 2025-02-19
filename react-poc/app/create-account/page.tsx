@@ -1,6 +1,6 @@
 /** @format */
 
-import { CreateAccount } from "../components/create-account/create-account";
+import { CreateAccount } from "../components/create-account";
 
 export default function CreateAccountPage() {
   return (
