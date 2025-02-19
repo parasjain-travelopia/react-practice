@@ -1,6 +1,6 @@
 /** @format */
 "use client";
-import { navLinks } from "@/constant/constant";
+import { navLinks } from "@/constant/nav-links";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { GrTechnology } from "react-icons/gr";
@@ -44,7 +44,7 @@ const Nav = ({ openNav }: Props) => {
         </div>
 
         <div className='hidden lg:flex items-center space-x-10'>
-          {navLinks.map((link) => (
+          {navLinks.map((link: any) => (
             <Link
               href={link.url}
               key={link.id}
