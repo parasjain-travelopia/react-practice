@@ -4,14 +4,12 @@
 import React from "react";
 import { useRouter } from "next/navigation";
 import { servicesList } from "@/constant/service-list";
-import Reviews from "../components/Reviews";
 
 const Services = () => {
   const router = useRouter();
 
   return (
     <>
-      <Reviews />
       <div className='min-h-screen py-20 bg-gray-100'>
         <div className='w-[90%] xl:w-[80%] mx-auto text-center'>
           <h1 className='text-4xl font-bold text-gray-900 mb-10'>
