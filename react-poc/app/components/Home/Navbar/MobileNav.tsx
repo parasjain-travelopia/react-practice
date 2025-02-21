@@ -14,7 +14,6 @@ const MobileNav = ({ showNav, closeNav }: Props) => {
 
   return (
     <div>
-      {/* Overlay */}
       {showNav && (
         <div
           className='fixed inset-0 bg-black opacity-40 w-full h-screen z-[1001]'
@@ -22,10 +21,8 @@ const MobileNav = ({ showNav, closeNav }: Props) => {
         />
       )}
 
-      {/* Mobile Nav Panel */}
       <div
         className={`fixed top-0 left-0 h-full w-[80%] sm:w-[60%] bg-black text-white space-y-6 p-6 transform ${isNavOpen} transition-transform duration-500 z-[1050]`}>
-        {/* Navigation Links */}
         {navLinks.map((link: any) => (
           <Link
             key={link.id}
@@ -35,7 +32,6 @@ const MobileNav = ({ showNav, closeNav }: Props) => {
           </Link>
         ))}
 
-        {/* Close Button */}
         <CgClose
           onClick={closeNav}
           className='absolute top-4 right-6 w-6 h-6 sm:w-8 sm:h-8 cursor-pointer'
