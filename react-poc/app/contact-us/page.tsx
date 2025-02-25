@@ -33,7 +33,7 @@ function ContactForm() {
 
   const onSubmit = (data: FormData) => {
     console.log("Form Submitted:", data);
-    alert("✅ Your message has been sent successfully!");
+    alert(" Your message has been sent successfully!");
   };
 
   useEffect(() => {
